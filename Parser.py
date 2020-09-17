@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import urllib.request
 
-URL = 'https://ru.ucoin.net/catalog/?country=ussr'
+URL = 'https://us.ucoin.net/catalog/?country=ussr'
 HEADERS = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36', 'accept':'*/*'}
 
 def get_html(url, params = None):
@@ -25,7 +25,7 @@ def get_content(html):
         coins.append(dict(title = item.find('tr', class_='marked-0').get_text(strip=True),
                           image1 = item.find('img').get('src'),
                           image2 = img2,
-                          discr = dis
+                          #discr = dis
                           ))
     print(coins)
 
