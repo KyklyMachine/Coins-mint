@@ -16,7 +16,9 @@ def get_content(html):
     items = soup.find_all('table')
     with sqlite3.connect('coins.db') as db:
         cursor = db.cursor()
-        cursor.execute("CREATE TABLE IF NOT EXISTS query (title TEXT, discriptions TEXT, image1 TEXT, image2 TEXT)")
+        cursor.execute("CREATE TABLE IF NOT EXISTS query (title TEXT, discriptions TEXT, image1 TEXT, image2 TEXT"
+                       "image3 TEXT, image4 TEXT, image5 TEXT, image6 TEXT, image7 TEXT, image8 TEXT, image9 TEXT"
+                       "image10 TEXT, image11 TEXT, image12 TEXT, image13 TEXT, image14 TEXT, image15 TEXT, image16 TEXT)")
         for item in items:
             img2 = item.find('img').get('src')
             img2 = img2.replace('-1c', '-2c')
@@ -26,7 +28,10 @@ def get_content(html):
             titleC = item.find('tr', class_='marked-0').get_text(strip=True)
             image1C = item.find('img').get('src')
             image2C = img2
-            cursor.execute("INSERT INTO query VALUES (?, ?, ?, ?)", (titleC, disC, image1C, image2C) )
+
+            nou = '-'
+
+            cursor.execute("INSERT INTO query VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (titleC, disC, image1C, image2C, nou, nou, nou, nou, nou, nou, nou, nou, nou, nou, nou, nou) )
         db.commit()
 
 
