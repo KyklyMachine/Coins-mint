@@ -242,7 +242,7 @@ def plotNNFilter(units):
 
 
 
-n_epochs = 15 #1
+n_epochs = 50 #1
 IMAGE_SIZE = 64
 NUM_CHANNELS = 3
 BATCH_SIZE = 100

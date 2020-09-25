@@ -23,7 +23,7 @@ with coin:
             print(url)
             print(row[0])
             img = urllib.request.urlopen(url).read()
-            out = open(row[0] + '_8' + ".jpg", "wb")
+            out = open('class ' + row[0] + '_8' + ".jpg", "wb")
             out.write(img)
             out.close
         else:
