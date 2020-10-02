@@ -89,6 +89,6 @@ def save():
     h5f.create_dataset('roman_coins', data=roman_index)
     h5f.close()
 
-#flip()
+flip()
 #rotate()
 #save()
